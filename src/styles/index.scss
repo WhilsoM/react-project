@@ -1,0 +1,97 @@
+@import 'reset.scss';
+@import 'variables.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $font-roboto-flex;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+// main
+.hero {
+	.container {
+		text-align: center;
+	}
+}
+
+.main {
+	flex: 1;
+	padding-top: 130px;
+}
+
+.map {
+	margin-bottom: 157px;
+	iframe {
+		width: 100%;
+		height: 300px;
+	}
+}
+
+.main-text {
+	font-size: 60px;
+	font-weight: 700;
+	margin-bottom: 38px;
+}
+.border-line {
+	background-color: $white-color;
+	width: 100px;
+	height: 1px;
+
+	margin: 0 auto 20px;
+}
+
+@keyframes myAnimation {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes transformTop {
+	0% {
+		opacity: 0;
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(10px);
+		opacity: 0.5;
+	}
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes themeDark {
+	0% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes themeLight {
+	0% {
+		opacity: 0.9;
+	}
+	100% {
+		opacity: 1;
+	}
+}
