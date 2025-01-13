@@ -22,7 +22,7 @@ body {
 	font-weight: 600;
 	margin-bottom: 14px;
 	text-align: center;
-	color: $section-color;
+
 	animation: transformTop 1s ease-in-out;
 }
 .btn {
@@ -34,6 +34,16 @@ body {
 }
 .success {
 	background-color: #90ee90;
+}
+.dark-theme {
+	background-color: $cod-gray !important;
+	color: $white-color !important;
+	animation: themeDark 1s ease-out;
+}
+.white-theme {
+	background-color: $white-color !important;
+	color: $cod-gray !important;
+	animation: themeLight 1.5s linear;
 }
 // main
 .hero {

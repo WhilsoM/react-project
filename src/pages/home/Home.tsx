@@ -1,8 +1,9 @@
+import { observer } from 'mobx-react-lite'
 import './home.scss'
 import bridgeCity from '/bridge-city.webp'
 import citySea from '/city-sea.webp'
 
-export const Home = () => {
+export const Home = observer(() => {
 	return (
 		<>
 			<section className='hero'>
@@ -114,4 +115,4 @@ export const Home = () => {
 			</section>
 		</>
 	)
-}
+})

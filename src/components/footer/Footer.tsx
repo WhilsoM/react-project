@@ -15,7 +15,7 @@ export const Footer = () => {
 
 		if (validateEmail(inpValue)) {
 			setBtnValue('отправлено! 🎉')
-			// btn.style.backgroundColor = '#90ee90'
+
 			setError('')
 		} else {
 			setError('Заполните почту правильно!')
@@ -30,12 +30,6 @@ export const Footer = () => {
 
 	const validateEmail = (email: string) =>
 		email.length > 0 && email.includes('@')
-
-	const mailSendCheck = () => {
-		if (validateEmail(inpValue)) {
-			setError('')
-		}
-	}
 
 	return (
 		<footer className={s.footer}>

@@ -10,6 +10,7 @@ export default defineConfig({
 			pages: '/src/pages',
 			styles: '/src/styles',
 			app: '/src/app',
+			store: '/src/store',
 		},
 	},
 })

@@ -27,7 +27,8 @@
 			"components/*": ["components/*"],
 			"app/*": ["app/*"],
 			"styles/*": ["styles/*"],
-			"pages/*": ["pages/*"]
+			"pages/*": ["pages/*"],
+			"store/*": ["store/*"]
 		},
 
 		"types": ["vite/client"]
