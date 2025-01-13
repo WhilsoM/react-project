@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import s from './footer.module.scss'
+import logo from '/logo.svg'
 
 export const Footer = () => {
 	return (
@@ -7,11 +8,7 @@ export const Footer = () => {
 			<div className='container'>
 				<div className={s.footer__wrapper}>
 					<div className={s.footer__row_one}>
-						<img
-							className={s.footer__img}
-							src='./assets/img/logo.svg'
-							alt='logo'
-						/>
+						<img className={s.footer__img} src={logo} alt='logo' />
 
 						<p className={s.footer__desc}>
 							Путеводитель по городу Санкт-Петербург.

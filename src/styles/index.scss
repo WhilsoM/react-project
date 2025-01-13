@@ -3,12 +3,6 @@
 @import 'media.scss';
 @import 'mixins.scss';
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
 body {
 	font-family: $font-roboto-flex;
 	display: flex;
@@ -31,7 +25,13 @@ body {
 	color: $section-color;
 	animation: transformTop 1s ease-in-out;
 }
-
+.btn {
+	cursor: pointer;
+	color: $white-color;
+	background-color: $red-color;
+	padding: 20px 20px;
+	transition: background-color, opacity 0.4s ease;
+}
 // main
 .hero {
 	.container {
