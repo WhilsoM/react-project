@@ -1,9 +1,8 @@
 @import 'styles/variables.scss';
+
 .footer {
 	background-color: $cod-gray;
 	padding-top: 60px;
-	flex-shrink: 0;
-
 	color: $white-color;
 
 	form {
@@ -77,7 +76,7 @@
 			color: rgba($white-color, 80%);
 		}
 		&::before {
-			content: url(../img/email.svg);
+			content: url('/email.svg');
 			left: 0;
 			top: 0;
 
@@ -94,11 +93,16 @@
 			color: rgba($white-color, 80%);
 		}
 		&::before {
-			content: url(../img/phone.svg);
+			content: url('/phone.svg');
 			left: 0;
 			top: 0;
 
 			position: absolute;
 		}
 	}
+}
+
+.error {
+	color: $red-color;
+	margin-bottom: 15px;
 }

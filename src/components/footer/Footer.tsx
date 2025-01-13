@@ -1,8 +1,42 @@
+import { useState } from 'react'
 import { Link } from 'react-router'
 import s from './footer.module.scss'
 import logo from '/logo.svg'
 
 export const Footer = () => {
+	const [btnValue, setBtnValue] = useState('отправить')
+	const [error, setError] = useState('')
+	const [inpValue, setInpValue] = useState('')
+
+	const mailSend = (e: any) => {
+		e.preventDefault()
+
+		if (btnValue === 'отправлено! 🎉') return
+
+		if (validateEmail(inpValue)) {
+			setBtnValue('отправлено! 🎉')
+			// btn.style.backgroundColor = '#90ee90'
+			setError('')
+		} else {
+			setError('Заполните почту правильно!')
+
+			setTimeout(() => {
+				setError('')
+			}, 3000)
+
+			return
+		}
+	}
+
+	const validateEmail = (email: string) =>
+		email.length > 0 && email.includes('@')
+
+	const mailSendCheck = () => {
+		if (validateEmail(inpValue)) {
+			setError('')
+		}
+	}
+
 	return (
 		<footer className={s.footer}>
 			<div className='container'>
@@ -16,10 +50,22 @@ export const Footer = () => {
 
 						<div className={s.footer__border_line}></div>
 
-						<p className={s.error}></p>
+						<p className={s.error}>{error}</p>
 						<form action='#'>
-							<input type='email' placeholder='почта...' />
-							<button className='btn'>отправить</button>
+							<input
+								type='email'
+								placeholder='почта...'
+								onInput={(e: any) => setInpValue(e.target.value)}
+								value={inpValue}
+							/>
+							<button
+								onClick={(e) => mailSend(e)}
+								className={`btn ${
+									btnValue === 'отправлено! 🎉' ? 'success' : ''
+								}`}
+							>
+								{btnValue}
+							</button>
 						</form>
 					</div>
 
