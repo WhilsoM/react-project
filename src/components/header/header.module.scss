@@ -1,5 +1,5 @@
-@import '../../styles/variables.scss';
-@import '../../styles/mixins.scss';
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
 
 .header {
 	padding: 20px 0;
@@ -10,6 +10,10 @@
 	width: 100%;
 
 	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 10px;
+
 		@include flex();
 		justify-content: space-between;
 	}

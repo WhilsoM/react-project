@@ -1,5 +1,7 @@
 @import 'reset.scss';
 @import 'variables.scss';
+@import 'media.scss';
+@import 'mixins.scss';
 
 * {
 	margin: 0;
@@ -19,6 +21,15 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 10px;
+}
+
+.section-title {
+	font-size: 40px;
+	font-weight: 600;
+	margin-bottom: 14px;
+	text-align: center;
+	color: $section-color;
+	animation: transformTop 1s ease-in-out;
 }
 
 // main

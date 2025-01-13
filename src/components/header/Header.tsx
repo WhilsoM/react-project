@@ -1,10 +1,11 @@
 import { NavLink } from 'react-router'
 import s from './header.module.scss'
 import logo from '/logo.svg'
+import sun from '/sun.svg'
 
 export const Header = () => (
 	<header className={s.header}>
-		<div className='container'>
+		<div className={s.container}>
 			<div className={s.header__wrapper}>
 				<div className={s.logo}>
 					<img src={logo} alt='turneo logo' />
@@ -13,7 +14,7 @@ export const Header = () => (
 				<nav>
 					<ul className={s.nav_list}>
 						<li>
-							<NavLink to={''} className={s.nav_list__link}>
+							<NavLink to={'/'} className={s.nav_list__link}>
 								Главная
 							</NavLink>
 						</li>
@@ -35,8 +36,8 @@ export const Header = () => (
 				<div className={s.theme}>
 					<button>
 						<img
-							src='./assets/img/sun.svg'
-							alt='sun'
+							src={sun}
+							alt={'sun'}
 							className={s.theme__icon}
 							title='сменить тему'
 						/>
@@ -45,8 +46,8 @@ export const Header = () => (
 
 				<div className={s.menu}>
 					<input
-						type='checkbox'
-						id='burger-checkbox'
+						type={'checkbox'}
+						id={'burger-checkbox'}
 						className={s.burger_checkbox}
 					/>
 
@@ -58,18 +59,12 @@ export const Header = () => (
 							</NavLink>
 						</li>
 						<li>
-							<NavLink
-								to={'./assets/pages/attractions.html'}
-								className='menu-item'
-							>
+							<NavLink to={'attractions'} className='menu-item'>
 								Достопримечательности
 							</NavLink>
 						</li>
 						<li>
-							<NavLink
-								to={'./assets/pages/contacts.html'}
-								className='menu-item'
-							>
+							<NavLink to={'contacts'} className='menu-item'>
 								Контакты
 							</NavLink>
 						</li>

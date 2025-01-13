@@ -1,4 +1,6 @@
 import './home.scss'
+import bridgeCity from '/bridge-city.webp'
+import citySea from '/city-sea.webp'
 
 export const Home = () => {
 	return (
@@ -80,19 +82,11 @@ export const Home = () => {
 							города — 59°57′ с. ш. и 30°19′ в. д..
 						</p>
 
-						<img
-							src='./assets/img/bridge-city.webp'
-							alt='bridge-city'
-							loading='lazy'
-						/>
+						<img src={bridgeCity} alt='bridge-city' loading='lazy' />
 					</div>
 
 					<div className='info-city__wrapper'>
-						<img
-							src='./assets/img/city-sea.webp'
-							alt='city sea'
-							loading='lazy'
-						/>
+						<img src={citySea} alt='city sea' loading='lazy' />
 
 						<p>
 							Это важный экономический, научный и культурный центр России,
