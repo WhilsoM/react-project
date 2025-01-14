@@ -45,6 +45,22 @@ body {
 	color: $cod-gray !important;
 	animation: themeLight 1.5s linear;
 }
+
+.loader {
+	margin: auto;
+	width: 75px;
+	height: 75px;
+	border: 10px solid #0b0b0b;
+	border-radius: 50%;
+	border-left-color: #221f22;
+	animation: loader 1.3s linear infinite;
+}
+@keyframes loader {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 // main
 .hero {
 	.container {
