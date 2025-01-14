@@ -5,12 +5,16 @@ class DarkTheme {
 		makeAutoObservable(this)
 	}
 
-	changeIcon = ''
+	currentIcon = ''
 
-	changeTheme(icon = 'sun') {
+	getIcon() {
+		return this.currentIcon
+	}
+
+	changeTheme(icon: string) {
 		return icon === 'sun'
-			? (this.changeIcon = 'moon')
-			: (this.changeIcon = 'sun')
+			? (this.currentIcon = 'sun')
+			: (this.currentIcon = 'moon')
 	}
 }
 

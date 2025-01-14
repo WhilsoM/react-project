@@ -6,9 +6,11 @@ import moon from '/moon.svg'
 import sun from '/sun.svg'
 
 import { useEffect, useState } from 'react'
+import { darkTheme } from 'store/darkTheme.store'
 
 export const Header = observer(() => {
 	const [theme, setTheme] = useState('sun')
+	console.log(darkTheme.changeTheme(theme))
 
 	useEffect(() => {
 		if (theme === 'sun') {
@@ -22,13 +24,19 @@ export const Header = observer(() => {
 
 	const changeIcons = () => {
 		if (theme === 'sun') {
+			darkTheme.changeTheme(theme)
 			return setTheme('moon')
 		}
+		darkTheme.changeTheme(theme)
 		return setTheme('sun')
 	}
 
 	return (
-		<header className={s.header}>
+		<header
+			className={`${s.header} ${
+				theme === 'sun' ? 'white-theme' : 'dark-theme'
+			}`}
+		>
 			<div className={s.container}>
 				<div className={s.header__wrapper}>
 					<div className={s.logo}>

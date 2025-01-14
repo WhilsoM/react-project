@@ -39,11 +39,17 @@ body {
 	background-color: $cod-gray !important;
 	color: $white-color !important;
 	animation: themeDark 1s ease-out;
+	a {
+		color: #fff !important;
+	}
 }
 .white-theme {
 	background-color: $white-color !important;
 	color: $cod-gray !important;
 	animation: themeLight 1.5s linear;
+	a {
+		color: #000 !important;
+	}
 }
 
 .loader {
@@ -61,6 +67,16 @@ body {
 	}
 }
 
+@keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
 // main
 .hero {
 	.container {
