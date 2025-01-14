@@ -11,8 +11,6 @@ export const Header = observer(() => {
 	const [theme, setTheme] = useState('sun')
 
 	useEffect(() => {
-		// const currentTheme = darkTheme.changeTheme(theme)
-
 		if (theme === 'sun') {
 			document.body.classList.add('white-theme')
 			document.body.classList.remove('dark-theme')
@@ -20,8 +18,6 @@ export const Header = observer(() => {
 			document.body.classList.remove('white-theme')
 			document.body.classList.add('dark-theme')
 		}
-
-		return () => {}
 	}, [theme])
 
 	const changeIcons = () => {
