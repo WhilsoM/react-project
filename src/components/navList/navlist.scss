@@ -1,0 +1,16 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.nav_list {
+  @include flex();
+  gap: 15px;
+  animation: transformTop 1.5s ease;
+
+  &__link {
+    color: $black-color;
+    transition: color 0.3s ease;
+    &:hover {
+      color: $red-color !important;
+    }
+  }
+}
