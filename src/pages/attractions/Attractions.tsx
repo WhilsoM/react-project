@@ -1,17 +1,9 @@
+import { AttractionList } from 'components/attractionList/AttractionList'
+import { AttrSkeleton } from 'components/skeletons/AttrSkeleton'
 import { useEffect, useState } from 'react'
-import ContentLoader from 'react-content-loader'
-import { Link } from 'react-router'
 import './attractions.scss'
 
-interface IItems {
-  image: string
-  title: string
-  price: string
-  description: string
-  id: string
-}
-
-const len = [1, 2, 3, 4]
+const lenSkeleton = [1, 2, 3, 4]
 
 export const Attractions = () => {
   const [isLoading, setIsLoading] = useState(false)
@@ -71,36 +63,9 @@ export const Attractions = () => {
         </div>
 
         <section id='content' className='attractions__cards'>
-          {isLoading &&
-            len.map(() => (
-              <ContentLoader
-                speed={2}
-                width={489}
-                height={400}
-                viewBox='0 0 489 400'
-                backgroundColor='#f3f3f3'
-                foregroundColor='#ecebeb'
-              >
-                <rect x='37' y='8' rx='11' ry='11' width='417' height='181' />
-                <rect x='194' y='199' rx='18' ry='18' width='74' height='44' />
-                <rect x='167' y='255' rx='9' ry='9' width='131' height='17' />
-                <rect x='75' y='285' rx='7' ry='7' width='319' height='98' />
-              </ContentLoader>
-            ))}
+          {isLoading && lenSkeleton.map((_, i: number) => <AttrSkeleton key={i} />)}
 
-          {!isLoading &&
-            attrList.map((item: IItems) => (
-              <article className='card' key={item.id}>
-                <div className='card__img'>
-                  <img src={item.image} alt={item.title} />
-                </div>
-                <p className='card__price'>{item.price}</p>
-
-                <h3 className='h3-title'>{item.title}</h3>
-                <p className='card__desc'>{item.description}</p>
-                <Link to={''}>Узнать подробнее</Link>
-              </article>
-            ))}
+          {!isLoading && <AttractionList attrList={attrList} />}
         </section>
       </div>
     </section>

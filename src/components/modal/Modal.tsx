@@ -1,9 +1,12 @@
-interface IModal {
-  darkTheme: any
-  setIsOpen: any
-}
+import { observer } from 'mobx-react-lite'
+import { useEffect } from 'react'
+import { IModal } from 'types/modal'
 
-export const Modal = ({ darkTheme, setIsOpen }: IModal) => {
+export const Modal = observer(({ darkTheme, setIsOpen }: IModal) => {
+  useEffect(() => {
+    console.log(darkTheme.getIcon())
+  }, [darkTheme])
+
   return (
     <div id='myModal' className={'modal'}>
       <div className={`modal-content  ${darkTheme.getIcon() === 'sun' ? 'white-theme' : 'dark-theme'}`}>
@@ -25,4 +28,4 @@ export const Modal = ({ darkTheme, setIsOpen }: IModal) => {
       </div>
     </div>
   )
-}
+})

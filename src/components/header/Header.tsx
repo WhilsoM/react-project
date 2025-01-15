@@ -16,7 +16,7 @@ export const Header = observer(() => {
     if (theme === 'sun') {
       document.body.classList.add('white-theme')
       document.body.classList.remove('dark-theme')
-    } else {
+    } else if (theme === 'moon') {
       document.body.classList.remove('white-theme')
       document.body.classList.add('dark-theme')
     }
@@ -25,9 +25,14 @@ export const Header = observer(() => {
   const changeIcons = () => {
     if (theme === 'sun') {
       darkTheme.changeTheme(theme)
+      console.log(darkTheme.getIcon())
+
       return setTheme('moon')
     }
+
     darkTheme.changeTheme(theme)
+    console.log(darkTheme.getIcon())
+
     return setTheme('sun')
   }
 
