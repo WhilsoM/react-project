@@ -1,13 +1,14 @@
+import { useQuery } from '@tanstack/react-query'
 import { AttractionList } from 'components/attractionList/AttractionList'
 import { AttrSkeleton } from 'components/skeletons/AttrSkeleton'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import './attractions.scss'
 
 const lenSkeleton = [1, 2, 3, 4]
 
 export const Attractions = () => {
-  const [isLoading, setIsLoading] = useState(false)
-  const [attrList, setAttrList] = useState([])
+  // const [isLoading, setIsLoading] = useState(false)
+  // const [attrList, setAttrList] = useState([])
 
   useEffect(() => {
     fetchData()
@@ -15,19 +16,23 @@ export const Attractions = () => {
 
   const fetchData = async () => {
     try {
-      setIsLoading(true)
-
+      // setIsLoading(true)
       const response = await fetch('https://6729edd66d5fa4901b6f05f6.mockapi.io/items')
+      return response.json()
 
-      const data = await response.json()
-
-      setAttrList(data)
+      // const data = await response.json()
+      // setAttrList(data)
     } catch (error) {
       console.error(error)
     } finally {
-      setIsLoading(false)
+      // setIsLoading(false)
     }
   }
+
+  const { data, isLoading } = useQuery({
+    queryKey: ['items'],
+    queryFn: fetchData,
+  })
 
   return (
     <section className='attractions'>
@@ -65,7 +70,7 @@ export const Attractions = () => {
         <section id='content' className='attractions__cards'>
           {isLoading && lenSkeleton.map((_, i: number) => <AttrSkeleton key={i} />)}
 
-          {!isLoading && <AttractionList attrList={attrList} />}
+          {!isLoading && <AttractionList data={data} />}
         </section>
       </div>
     </section>

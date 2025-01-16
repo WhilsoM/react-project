@@ -1,10 +1,10 @@
 import { Link } from 'react-router'
 import { IItem } from 'types/item'
 
-export const AttractionList = ({ attrList = [] }) => {
+export const AttractionList = ({ data = [] }) => {
   return (
     <>
-      {attrList.map((item: IItem) => (
+      {data?.map((item: IItem) => (
         <article className='card' key={item.id}>
           <div className='card__img'>
             <img src={item.image} alt={item.title} />
