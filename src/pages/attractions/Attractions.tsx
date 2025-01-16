@@ -1,6 +1,5 @@
 import { AttractionList } from 'components/attractionList/AttractionList'
 import { AttrSkeleton } from 'components/skeletons/AttrSkeleton'
-import { useItem } from 'hooks/useItemById'
 import { useItems } from 'hooks/useItems'
 import './attractions.scss'
 
@@ -9,7 +8,7 @@ const lenSkeleton = [1, 2, 3, 4]
 const isAuth = true
 
 export const Attractions = () => {
-  const { item } = useItem('1')
+  // const { item } = useItem('1')
 
   const { data, isLoading } = useItems(isAuth)
 

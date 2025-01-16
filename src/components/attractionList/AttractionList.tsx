@@ -1,7 +1,12 @@
+import { FC } from 'react'
 import { Link } from 'react-router'
 import { IItem } from 'types/item'
+interface AttractionListProps {
+  data: IItem[] | undefined
+}
+export const AttractionList: FC<AttractionListProps> = ({ data = [] }) => {
+  console.log(data)
 
-export const AttractionList = ({ data = [] }) => {
   return (
     <>
       {data?.length
