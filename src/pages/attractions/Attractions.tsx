@@ -1,38 +1,17 @@
-import { useQuery } from '@tanstack/react-query'
 import { AttractionList } from 'components/attractionList/AttractionList'
 import { AttrSkeleton } from 'components/skeletons/AttrSkeleton'
-import { useEffect } from 'react'
+import { useItem } from 'hooks/useItemById'
+import { useItems } from 'hooks/useItems'
 import './attractions.scss'
 
 const lenSkeleton = [1, 2, 3, 4]
 
+const isAuth = true
+
 export const Attractions = () => {
-  // const [isLoading, setIsLoading] = useState(false)
-  // const [attrList, setAttrList] = useState([])
+  const { item } = useItem('1')
 
-  useEffect(() => {
-    fetchData()
-  }, [])
-
-  const fetchData = async () => {
-    try {
-      // setIsLoading(true)
-      const response = await fetch('https://6729edd66d5fa4901b6f05f6.mockapi.io/items')
-      return response.json()
-
-      // const data = await response.json()
-      // setAttrList(data)
-    } catch (error) {
-      console.error(error)
-    } finally {
-      // setIsLoading(false)
-    }
-  }
-
-  const { data, isLoading } = useQuery({
-    queryKey: ['items'],
-    queryFn: fetchData,
-  })
+  const { data, isLoading } = useItems(isAuth)
 
   return (
     <section className='attractions'>
