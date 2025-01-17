@@ -4,4 +4,5 @@ export interface IItem {
   price: string
   description: string
   id: string
+  popularity: number
 }
