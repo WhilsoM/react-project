@@ -47,3 +47,10 @@
     }
   }
 }
+
+@media (max-width: 998px) {
+  .attractions__cards {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}

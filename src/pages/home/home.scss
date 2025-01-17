@@ -1,37 +1,51 @@
 @import 'styles/variables.scss';
-
 @import 'styles/mixins.scss';
 
 .info-city {
-	margin-bottom: 131px;
-}
+  margin-bottom: 130px;
 
-.info-city__info {
-	@include flex();
-	flex-direction: column;
-	justify-content: center;
-	margin-bottom: 61px;
-}
+  &__info {
+    @include flex();
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 61px;
+  }
 
-.info-city__subtitle {
-	margin-bottom: 36px;
+  &__subtitle {
+    margin-bottom: 36px;
+  }
+
+  &__wrapper {
+    @include flex();
+    justify-content: space-between;
+    gap: 25px;
+    font-size: 19px;
+    &-mb {
+      margin-bottom: 100px;
+    }
+    img {
+      width: 700px;
+    }
+  }
 }
 
 .border-line-red {
-	background-color: $red-color;
-	height: 4px;
-	width: 212px;
+  background-color: $red-color;
+  height: 4px;
+  width: 212px;
 }
 
-.info-city__wrapper {
-	@include flex();
-	justify-content: space-between;
-	gap: 25px;
-	font-size: 19px;
-	&-mb {
-		margin-bottom: 100px;
-	}
-	img {
-		width: 700px;
-	}
+@media (max-width: 998px) {
+  .info-city {
+    &__info {
+      margin-bottom: 30px;
+    }
+    &__wrapper {
+      flex-direction: column;
+
+      p {
+        font-size: 15px;
+      }
+    }
+  }
 }

@@ -4,150 +4,175 @@
 @import 'mixins.scss';
 
 body {
-	font-family: $font-roboto-flex;
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	margin: 0;
+  font-family: $font-roboto-flex;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
 
 .container {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
 .section-title {
-	font-size: 40px;
-	font-weight: 600;
-	margin-bottom: 14px;
-	text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  text-align: center;
 
-	animation: transformTop 1s ease-in-out;
+  animation: transformTop 1s ease-in-out;
 }
 .btn {
-	cursor: pointer;
-	color: $white-color;
-	background-color: $red-color;
-	padding: 20px 20px;
-	transition: background-color, opacity 0.4s ease;
+  cursor: pointer;
+  color: $white-color;
+  background-color: $red-color;
+  padding: 20px 20px;
+  transition: background-color, opacity 0.4s ease;
 }
 .success {
-	background-color: #90ee90;
+  background-color: #90ee90;
 }
 .dark-theme {
-	background-color: $cod-gray !important;
-	color: $white-color !important;
-	animation: themeDark 1s ease-out;
-	a {
-		color: #fff !important;
-	}
+  background-color: $cod-gray !important;
+  color: $white-color !important;
+  animation: themeDark 1s ease-out;
+  a {
+    color: #fff !important;
+  }
 }
 .white-theme {
-	background-color: $white-color !important;
-	color: $cod-gray !important;
-	animation: themeLight 1.5s linear;
-	a {
-		color: #000 !important;
-	}
+  background-color: $white-color !important;
+  color: $cod-gray !important;
+  animation: themeLight 1.5s linear;
+  a {
+    color: #000 !important;
+  }
+}
+
+.invert-color {
+  filter: invert(1);
 }
 
 .loader {
-	margin: auto;
-	width: 75px;
-	height: 75px;
-	border: 10px solid #0b0b0b;
-	border-radius: 50%;
-	border-left-color: #221f22;
-	animation: loader 1.3s linear infinite;
+  margin: auto;
+  width: 75px;
+  height: 75px;
+  border: 10px solid #0b0b0b;
+  border-radius: 50%;
+  border-left-color: #221f22;
+  animation: loader 1.3s linear infinite;
 }
 @keyframes loader {
-	100% {
-		transform: rotate(360deg);
-	}
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes animatetop {
-	from {
-		top: -300px;
-		opacity: 0;
-	}
-	to {
-		top: 0;
-		opacity: 1;
-	}
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 // main
 .hero {
-	.container {
-		text-align: center;
-	}
+  .container {
+    text-align: center;
+  }
 }
 
 .main {
-	flex: 1;
-	padding-top: 130px;
+  flex: 1;
+  padding-top: 130px;
 }
 
 .map {
-	margin-bottom: 157px;
-	iframe {
-		width: 100%;
-		height: 300px;
-	}
+  margin-bottom: 157px;
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
 }
 
 .main-text {
-	font-size: 60px;
-	font-weight: 700;
-	margin-bottom: 38px;
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 38px;
 }
-.border-line {
-	background-color: $white-color;
-	width: 100px;
-	height: 1px;
 
-	margin: 0 auto 20px;
+@media (max-width: 778px) {
+  .main-text {
+    font-size: 50px !important;
+    margin-bottom: 28px !important;
+  }
+}
+
+@media (max-width: 628px) {
+  .main-text {
+    font-size: 40px !important;
+    margin-bottom: 10px !important;
+  }
+}
+
+@media (max-width: 478px) {
+  .main-text {
+    font-size: 35px !important;
+  }
+}
+
+.border-line {
+  background-color: $white-color;
+  width: 100px;
+  height: 1px;
+
+  margin: 0 auto 20px;
 }
 
 @keyframes myAnimation {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes transformTop {
-	0% {
-		opacity: 0;
-		transform: translateY(0px);
-	}
-	50% {
-		transform: translateY(10px);
-		opacity: 0.5;
-	}
-	100% {
-		transform: translateY(0px);
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 @keyframes themeDark {
-	0% {
-		opacity: 0.5;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes themeLight {
-	0% {
-		opacity: 0.9;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -105,3 +105,32 @@
   color: $red-color;
   margin-bottom: 15px;
 }
+
+@media (max-width: 628px) {
+  .footer {
+    &__wrapper {
+      gap: 40px;
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+
+    &__row-one,
+    &__row-two {
+      width: 100%;
+    }
+
+    form {
+      width: 100%;
+
+      flex-direction: column;
+      input {
+        width: 100%;
+        margin-bottom: 13px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}

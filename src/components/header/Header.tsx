@@ -11,6 +11,7 @@ import { darkTheme } from 'store/darkTheme.store'
 
 export const Header = observer(() => {
   const [theme, setTheme] = useState('sun')
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     if (theme === 'sun') {
@@ -25,13 +26,11 @@ export const Header = observer(() => {
   const changeIcons = () => {
     if (theme === 'sun') {
       darkTheme.changeTheme(theme)
-      console.log(darkTheme.getIcon())
 
       return setTheme('moon')
     }
 
     darkTheme.changeTheme(theme)
-    console.log(darkTheme.getIcon())
 
     return setTheme('sun')
   }
@@ -48,33 +47,40 @@ export const Header = observer(() => {
         </div>
 
         <div className={s.header__wrapper}>
-          <div className={s.theme}>
+          <div>
             <button onClick={changeIcons}>
-              <img src={theme === 'sun' ? sun : moon} alt={theme} className={s.theme__icon} title='сменить тему' />
+              <img
+                src={theme === 'sun' ? sun : moon}
+                alt={theme}
+                className={`${s.theme__icon} ${theme === 'sun' ? '' : 'invert-color'}`}
+                title='сменить тему'
+              />
             </button>
           </div>
 
           <div className={s.menu}>
-            <input type={'checkbox'} id={'burger-checkbox'} className={s.burger_checkbox} />
+            <input type={'checkbox'} id={s.burger_checkbox} className={s.burger_checkbox} />
 
-            <label id='burger-checkbox' className='burger'></label>
-            <ul className='menu-list'>
-              <li>
-                <NavLink to={'/'} className='menu-item'>
-                  Главная
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to={'attractions'} className='menu-item'>
-                  Достопримечательности
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to={'contacts'} className='menu-item'>
-                  Контакты
-                </NavLink>
-              </li>
-            </ul>
+            <label onClick={() => setIsOpen((bool) => !bool)} id={s.burger_checkbox} className={s.burger}></label>
+            {isOpen && (
+              <ul className={s.menu_list}>
+                <li>
+                  <NavLink to={'/'} className={s.menu_item}>
+                    Главная
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to={'attractions'} className={s.menu_item}>
+                    Достопримечательности
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to={'contacts'} className={s.menu_item}>
+                    Контакты
+                  </NavLink>
+                </li>
+              </ul>
+            )}
           </div>
         </div>
       </div>

@@ -45,7 +45,7 @@ export const Attractions = () => {
           <AttractionFilter />
         </div>
 
-        <section id='content' className='attractions__cards'>
+        <section className='attractions__cards'>
           {isLoading && lenSkeleton.map((_, i: number) => <AttrSkeleton key={i} />)}
 
           {!isLoading && <AttractionList data={data} />}
