@@ -11,7 +11,7 @@ const fetchData = async (page = 1, sortBy = 'alphabet', value = '') => {
   try {
     let url = `${API_URL}?page=${page}&limit=${itemsPerPage}&sortBy=${sortBy}&order=asc&search=${value}`
 
-    return await axios.get<IItem[]>(url)
+    return await axios.get<IItem[] | []>(url)
   } catch (error) {
     console.error(error)
   }
@@ -32,5 +32,5 @@ export const useItems = (page: number, sortBy: string, value: string) => {
     if (isError) console.log('error fetching data')
   }, [isError])
 
-  return { data, isLoading, isSuccess, isError }
+  return { data: data || [], isLoading, isSuccess, isError }
 }

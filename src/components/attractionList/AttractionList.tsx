@@ -3,8 +3,7 @@ import { Link, useSearchParams } from 'react-router'
 import { IItem } from 'types/item'
 
 interface AttractionListProps {
-  data: IItem[] | []
-  inpText: string | ''
+  data: IItem[]
 }
 
 export const AttractionList: FC<AttractionListProps> = ({ data = [] }) => {

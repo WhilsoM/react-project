@@ -48,7 +48,7 @@ export const Attractions = () => {
         <section id='content' className='attractions__cards'>
           {isLoading && lenSkeleton.map((_, i: number) => <AttrSkeleton key={i} />)}
 
-          {!isLoading && <AttractionList data={data} inpText={value} />}
+          {!isLoading && <AttractionList data={data} />}
         </section>
       </div>
     </section>
