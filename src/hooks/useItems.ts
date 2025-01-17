@@ -17,11 +17,11 @@ const fetchData = async (page = 1, sortBy = 'alphabet', value = '') => {
   }
 }
 
-export const useItems = (page: number, sort: string, value: string) => {
+export const useItems = (page: number, sortBy: string, value: string) => {
   const { data, isLoading, isSuccess, isError } = useQuery({
-    queryKey: ['items', page, sort, value],
-    queryFn: () => fetchData(page, sort, value),
-    select: (data: any) => data.data,
+    queryKey: ['items', page, sortBy, value],
+    queryFn: () => fetchData(page, sortBy, value),
+    select: (data) => data?.data,
   })
 
   useEffect(() => {

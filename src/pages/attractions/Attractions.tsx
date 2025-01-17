@@ -11,11 +11,13 @@ const lenSkeleton = [1, 2, 3, 4]
 
 export const Attractions = () => {
   const [searchParams, setSearchParams] = useSearchParams()
+
   const [value, setValue] = useState(searchParams.get('search') || '')
+  const sortBy = searchParams.get('sort') || ''
 
   let currentPage = 1
 
-  const { data, isLoading } = useItems(currentPage, 'alphabet', value)
+  const { data, isLoading } = useItems(currentPage, sortBy, value)
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value
